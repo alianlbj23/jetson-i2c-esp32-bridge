@@ -1,0 +1,22 @@
+menu "Jetson I2C Test Configuration"
+
+    config JETSON_I2C_SDA_GPIO
+        int "SDA GPIO number"
+        default 8
+        help
+            ESP32 GPIO connected to Jetson SDA (40-pin header pin 3 or 27).
+
+    config JETSON_I2C_SCL_GPIO
+        int "SCL GPIO number"
+        default 9
+        help
+            ESP32 GPIO connected to Jetson SCL (40-pin header pin 5 or 28).
+
+    config JETSON_I2C_SLAVE_ADDR
+        hex "ESP32 I2C slave address (7-bit)"
+        range 0x08 0x77
+        default 0x28
+        help
+            Address the Jetson will see in `i2cdetect`.
+
+endmenu
